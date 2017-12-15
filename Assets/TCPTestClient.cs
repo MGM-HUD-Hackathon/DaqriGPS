@@ -23,10 +23,12 @@ public class TCPTestClient : MonoBehaviour {
 		ConnectToTcpServer();     
 	}  	
 	// Update is called once per frame
-	void Update () {         
-		if (Input.GetKeyDown(KeyCode.Space)) {             
+	void Update () {      
+
+
+		/*if (Input.GetKeyDown(KeyCode.Space)) {             
 			SendMessage();         
-		}     
+		} */    
 	}  	
 	/// <summary> 	
 	/// Setup socket connection. 	
@@ -100,7 +102,7 @@ public class TCPTestClient : MonoBehaviour {
 
 							//Debug.Log(Lat);
 
-							gameObject.GetComponent<TextMesh>().text = "Lat: " + Lat.ToString() + "\nLong: " + Long1.ToString();
+							gameObject.GetComponent<TextMesh>().text = "Lat: " + Lat.ToString() + "\nLon: " + Long1.ToString();
 
 						}
 						

@@ -1,0 +1,19 @@
+--------------------------------
+Fri Dec 15 17:35:43 2017  -  <ddb> log opened
+Fri Dec 15 17:35:43 2017  -  Requesting package generation
+Fri Dec 15 17:35:47 2017  -  Requesting device to prepare for transfer
+Fri Dec 15 17:35:47 2017  -  Requesting package transfer to device
+Fri Dec 15 17:35:47 2017  -  Connecting to 10.10.46.188
+Fri Dec 15 17:35:48 2017  -  Starting scp session
+Fri Dec 15 17:35:48 2017  -  Copying package: DaqriGps.dqz
+Fri Dec 15 17:35:48 2017  -  Reading file contents of DaqriGps.dqz
+Fri Dec 15 17:35:48 2017  -  Writing file contents of DaqriGps.dqz
+Fri Dec 15 17:35:50 2017  -  Requesting package installation
+Fri Dec 15 17:35:50 2017  -  Connecting to 10.10.46.188
+Fri Dec 15 17:35:50 2017  -  Executing SSH command
+Fri Dec 15 17:35:52 2017  -  Command executed successfully
+Utility finished with final message: Bundle installed successfully
+Application Installation successful!
+Success
+Fri Dec 15 17:35:52 2017  -  <ddb> log closed
+--------------------------------
