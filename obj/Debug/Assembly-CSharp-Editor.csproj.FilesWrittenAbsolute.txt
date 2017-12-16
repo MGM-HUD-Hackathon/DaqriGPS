@@ -49,3 +49,4 @@
 /Users/Shared/Unity/DaqriGps/Temp/bin/Debug/Unity.Cecil.Pdb.dll
 /Users/Shared/Unity/DaqriGps/Temp/bin/Debug/Unity.Cecil.Mdb.dll
 /Users/Shared/Unity/DaqriGps/Temp/bin/Debug/UnityEditor.LinuxStandalone.Extensions.dll
+/Users/Shared/Unity/DaqriGps/Temp/bin/Debug/GeoUtility.dll

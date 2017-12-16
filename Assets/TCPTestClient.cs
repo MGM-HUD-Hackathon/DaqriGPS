@@ -7,6 +7,8 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
+using GeoUtility.GeoSystem; 
+
 public class TCPTestClient : MonoBehaviour {  	
 	#region private members 	
 	private TcpClient socketConnection; 	
@@ -22,7 +24,7 @@ public class TCPTestClient : MonoBehaviour {
 	// Use this for initialization 	
 	void Start () {
 		Debug.Log ("In the Connect method");
-		ConnectToTcpServer();     
+		ConnectToTcpServer(); 
 	}  	
 
 	// Update is called once per frame
@@ -58,22 +60,64 @@ public class TCPTestClient : MonoBehaviour {
 						if (srvrMsgs [0] == nmea) {
 							Debug.Log (serverMessage);
 
-							double Lat = Convert.ToDouble (srvrMsgs [2]);
-							double Lon = Convert.ToDouble (srvrMsgs [4]);
+							double Lat = Convert.ToDouble (srvrMsgs [2])/100; //32.226984
+							double Lon = Convert.ToDouble (srvrMsgs [4])/100; //86.186043
 
-							if (srvrMsgs [4] == "S") {
-								Lat = Lat * -1;
+							//Debug.Log("Lat: " + Lat);
+							//Debug.Log("Lon: " + Lon);
+
+
+							double Lat_deg = Convert.ToDouble(Math.Floor(Lat)); //32
+							double Lon_deg = Convert.ToDouble(Math.Floor(Lon)); //86
+
+
+							//Debug.Log("Lat_deg: " + Lat_deg);
+							//Debug.Log("Lon_deg: " + Lon_deg);
+
+							double Lat_minute = (Lat - Lat_deg)*100/60; //(0.226984*100)/60 = (22.6984)/60 = 0.378306
+							double Lon_minute = (Lon - Lon_deg)*100/60; //(0.186043*100)/60  = (18.6043)/60 = 0.310071
+
+
+							//Debug.Log("Lat_minute: " + Lat_minute);
+							//Debug.Log("Lon_minute: " + Lon_minute);
+
+							double Lat_dec_deg = Lat_deg + Lat_minute;
+							double Lon_dec_deg = Lon_deg + Lon_minute;
+
+							//Debug.Log("Lat_dec_deg: " + Lat_dec_deg);
+							//Debug.Log("Lon_dec_deg: " + Lon_dec_deg);
+
+							if (srvrMsgs [3] == "S") {
+								Lat_dec_deg = Lat_dec_deg * -1;
 							}
 
-							if (srvrMsgs [4] == "W") {
-								Lon = Lon * -1;
+							if (srvrMsgs [5] == "W") {
+								Lon_dec_deg = Lon_dec_deg * -1;
 							}
+
+
+
+
+							/*Debug.Log("Lat: " + Lat.ToString());
+							Debug.Log("Lon: " + Lon.ToString()); */
+
+
+							Geographic geo = new Geographic(Lon_dec_deg, Lat_dec_deg);
+							MGRS mgrs  = (MGRS)geo;
+							double eastM = mgrs.East;
+							double northM = mgrs.North;
+							int zoneM = mgrs.Zone;
+							string bandM = mgrs.Band;
+							string gridM = mgrs.Grid;
+							string MgrsString = zoneM.ToString() + bandM + " " + gridM + " " + eastM.ToString() + " " + northM.ToString();
 
 							//Debug.Log ("Ping 1");
-							gameObject.GetComponent<TextMesh> ().text = "Lat: " + Lat.ToString () + "\nLon: " + Lon.ToString ();
+							gameObject.GetComponent<TextMesh> ().text =  MgrsString;
+							//gameObject.GetComponent<TextMesh> ().text = "Lat: " + Lat.ToString () + "\nLon: " + Lon.ToString ();
+
 							//Debug.Log ("Ping 2");
 							break;
-						
+
 						} 	
 					}
 				} 	       
@@ -84,7 +128,7 @@ public class TCPTestClient : MonoBehaviour {
 			yield return new WaitForSeconds (waitTime);
 		}
 	}
-	
+
 
 	/*private IEnumerator waitt(float waitTime) {
 		print ("Started waiting " + Time.time);
@@ -93,4 +137,3 @@ public class TCPTestClient : MonoBehaviour {
 	}*/
 
 }
-

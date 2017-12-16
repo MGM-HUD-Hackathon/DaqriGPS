@@ -26,3 +26,4 @@
 /Users/Shared/Unity/DaqriGps/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/Shared/Unity/DaqriGps/Temp/bin/Debug/Unity.Cecil.Pdb.dll
 /Users/Shared/Unity/DaqriGps/Temp/bin/Debug/Unity.Cecil.Mdb.dll
+/Users/Shared/Unity/DaqriGps/Temp/bin/Debug/GeoUtility.dll
