@@ -6,9 +6,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.20506</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
     <ProjectGuid>{CC4C328B-0A63-EEFC-F4FF-FD25FB6D5717}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -39,118 +38,117 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.XML" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\Applications\Unity\Unity.app\Contents\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+      <HintPath>..\..\..\..\Applications\Unity\Unity.app\Contents\Managed\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DAQRI\Scripts\AdditionalControls.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\CalibrationControls.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\ColorCameraControls.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\CreateParentCanvas.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\DepthControls.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\ExampleApplicationLifeCycleEventImpl.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\ExampleDwellProgress.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\ExampleKeyboardHandler.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\Initializer.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\NoThermalHardwareHandler.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\PointerHandlerTest.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\ReticleLogger.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\ThermalControls.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\AppQuit.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\ButtonPointerAnimations.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\ButtonResetStateOnDisable.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\Deprecated\Panel.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\Deprecated\PanelController.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\Deprecated\PanelControllerNavigationButton.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\DropdownAnimations.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\DropDownAppear.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\HorizontalDrawer.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\Launcher.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\LauncherBaseAnimation.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\LauncherCollapseOnClick.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\MenuItemDrawer.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\ScaledUIElement.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\ScrollPanelDrawer.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\ScrollView\CellClickEvent.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\ScrollView\ExampleScrollViewController.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\ScrollView\ScrollView.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\ScrollView\ScrollViewButton.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\ScrollView\ScrollViewController.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\SoftwareKeyboardInputFieldHandler.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\SoftwareKeyboardTextHandler.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\UniversalMenu\MenuNavigationButton.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\UniversalMenu\MenuNextPageButton.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\UniversalMenu\MenuPage.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\UI\UniversalMenu\UniversalMenu.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\VideoSeeThrough.cs" />
-     <Compile Include="Assets\DAQRI\Scripts\VIOInitializer.cs" />
-     <Compile Include="Assets\DAQRI\System\Scripts\ApplicationLifeCycleEventHandler.cs" />
-     <Compile Include="Assets\DAQRI\System\Scripts\BodySpace.cs" />
-     <Compile Include="Assets\DAQRI\System\Scripts\ColorCameraPreview.cs" />
-     <Compile Include="Assets\DAQRI\System\Scripts\DepthCameraPreview.cs" />
-     <Compile Include="Assets\DAQRI\System\Scripts\GetGPSoverTCP.cs" />
-     <Compile Include="Assets\DAQRI\System\Scripts\LetterSpacing.cs" />
-     <Compile Include="Assets\DAQRI\System\Scripts\MenuListAutosizingBackground.cs" />
-     <Compile Include="Assets\DAQRI\System\Scripts\PovStreamer.cs" />
-     <Compile Include="Assets\DAQRI\System\Scripts\TextCapitalization.cs" />
-     <Compile Include="Assets\DAQRI\System\Scripts\ThermalCameraPreview.cs" />
-     <Compile Include="Assets\DAQRI\System\Scripts\TrackedObject.cs" />
-     <Compile Include="Assets\DAQRI\System\Scripts\TrackedObjectEventHandlerImpl.cs" />
-     <Compile Include="Assets\DoOnMainThread.cs" />
-     <Compile Include="Assets\TCPTestClient.cs" />
-     <None Include="Assets\DAQRI\System\Shaders\TrackedObject.shader" />
-     <None Include="Assets\DAQRI\Plugins\DSD\VosExtension.xml" />
-     <None Include="Assets\DAQRI\System\Resources\Unlit-Normal.shader" />
-     <None Include="Assets\DAQRI\System\DaqriGuideLink.txt" />
-     <None Include="Assets\DAQRI\System\Shaders\UIOverlay.shader" />
-     <None Include="Assets\DAQRI\System\DaqriAPILink.txt" />
-     <None Include="Assets\DAQRI\Plugins\Unity\VosExtension.xml" />
-     <None Include="Assets\DAQRI\System\config.txt" />
-     <None Include="Assets\DAQRI\Plugins\Editor\VosExtension.Editor.xml" />
- <Reference Include="UnityEngine.UIAutomation">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TestRunner">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="nunit.framework">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UI">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Timeline">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.GoogleAudioSpatializer">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.HoloLens">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
- </Reference>
- <Reference Include="VosExtension">
- <HintPath>/Users/Shared/Unity/DaqriGps/Assets/DAQRI/Plugins/Unity/VosExtension.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>/Users/cddiggs082990/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>/Users/cddiggs082990/Library/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\DAQRI\Scripts\AdditionalControls.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\CalibrationControls.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\ColorCameraControls.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\CreateParentCanvas.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\DepthControls.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\ExampleApplicationLifeCycleEventImpl.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\ExampleDwellProgress.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\ExampleKeyboardHandler.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\Initializer.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\NoThermalHardwareHandler.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\PointerHandlerTest.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\ReticleLogger.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\ThermalControls.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\AppQuit.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\ButtonPointerAnimations.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\ButtonResetStateOnDisable.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\Deprecated\Panel.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\Deprecated\PanelController.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\Deprecated\PanelControllerNavigationButton.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\DropdownAnimations.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\DropDownAppear.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\HorizontalDrawer.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\Launcher.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\LauncherBaseAnimation.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\LauncherCollapseOnClick.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\MenuItemDrawer.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\ScaledUIElement.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\ScrollPanelDrawer.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\ScrollView\CellClickEvent.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\ScrollView\ExampleScrollViewController.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\ScrollView\ScrollView.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\ScrollView\ScrollViewButton.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\ScrollView\ScrollViewController.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\SoftwareKeyboardInputFieldHandler.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\SoftwareKeyboardTextHandler.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\UniversalMenu\MenuNavigationButton.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\UniversalMenu\MenuNextPageButton.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\UniversalMenu\MenuPage.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\UI\UniversalMenu\UniversalMenu.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\VideoSeeThrough.cs" />
+    <Compile Include="Assets\DAQRI\Scripts\VIOInitializer.cs" />
+    <Compile Include="Assets\DAQRI\System\Scripts\ApplicationLifeCycleEventHandler.cs" />
+    <Compile Include="Assets\DAQRI\System\Scripts\BodySpace.cs" />
+    <Compile Include="Assets\DAQRI\System\Scripts\ColorCameraPreview.cs" />
+    <Compile Include="Assets\DAQRI\System\Scripts\DepthCameraPreview.cs" />
+    <Compile Include="Assets\DAQRI\System\Scripts\GetGPSoverTCP.cs" />
+    <Compile Include="Assets\DAQRI\System\Scripts\LetterSpacing.cs" />
+    <Compile Include="Assets\DAQRI\System\Scripts\MenuListAutosizingBackground.cs" />
+    <Compile Include="Assets\DAQRI\System\Scripts\PovStreamer.cs" />
+    <Compile Include="Assets\DAQRI\System\Scripts\TextCapitalization.cs" />
+    <Compile Include="Assets\DAQRI\System\Scripts\ThermalCameraPreview.cs" />
+    <Compile Include="Assets\DAQRI\System\Scripts\TrackedObject.cs" />
+    <Compile Include="Assets\DAQRI\System\Scripts\TrackedObjectEventHandlerImpl.cs" />
+    <Compile Include="Assets\TCPTestClient.cs" />
+    <None Include="Assets\DAQRI\System\Shaders\TrackedObject.shader" />
+    <None Include="Assets\DAQRI\Plugins\DSD\VosExtension.xml" />
+    <None Include="Assets\DAQRI\System\Resources\Unlit-Normal.shader" />
+    <None Include="Assets\DAQRI\System\DaqriGuideLink.txt" />
+    <None Include="Assets\DAQRI\System\Shaders\UIOverlay.shader" />
+    <None Include="Assets\DAQRI\System\DaqriAPILink.txt" />
+    <None Include="Assets\DAQRI\Plugins\Unity\VosExtension.xml" />
+    <None Include="Assets\DAQRI\System\config.txt" />
+    <None Include="Assets\DAQRI\Plugins\Editor\VosExtension.Editor.xml" />
+    <Reference Include="UnityEngine.UIAutomation">
+      <HintPath>..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\UIAutomation\UnityEngine.UIAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\TestRunner\UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\TestRunner\net35\unity-custom\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\Networking\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\GUISystem\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Timeline">
+      <HintPath>..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\Timeline\RuntimeEditor\UnityEngine.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GoogleAudioSpatializer">
+      <HintPath>..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\UnityGoogleAudioSpatializer\RuntimeEditor\UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\UnityHoloLens\RuntimeEditor\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\UnitySpatialTracking\RuntimeEditor\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="VosExtension">
+      <HintPath>Assets\DAQRI\Plugins\Unity\VosExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>..\..\..\cddiggs082990\Library\Unity\cache\packages\packages.unity.com\com.unity.analytics%401.0.1\UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>..\..\..\cddiggs082990\Library\Unity\cache\packages\packages.unity.com\com.unity.purchasing%401.0.1\UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -160,5 +158,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>
