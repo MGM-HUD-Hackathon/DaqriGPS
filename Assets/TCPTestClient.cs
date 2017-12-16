@@ -7,7 +7,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
-using GeoUtility.GeoSystem; 
+//using GeoUtility.GeoSystem; 
 
 public class TCPTestClient : MonoBehaviour {  	
 	#region private members 	
@@ -62,6 +62,7 @@ public class TCPTestClient : MonoBehaviour {
 
 							double Lat = Convert.ToDouble (srvrMsgs [2])/100; //32.226984
 							double Lon = Convert.ToDouble (srvrMsgs [4])/100; //86.186043
+							double Alt = Convert.ToDouble (srvrMsgs [9]);
 
 							//Debug.Log("Lat: " + Lat);
 							//Debug.Log("Lon: " + Lon);
@@ -94,15 +95,11 @@ public class TCPTestClient : MonoBehaviour {
 							if (srvrMsgs [5] == "W") {
 								Lon_dec_deg = Lon_dec_deg * -1;
 							}
-
-
-
-
 							/*Debug.Log("Lat: " + Lat.ToString());
 							Debug.Log("Lon: " + Lon.ToString()); */
 
 
-							Geographic geo = new Geographic(Lon_dec_deg, Lat_dec_deg);
+							/*Geographic geo = new Geographic(Lon_dec_deg, Lat_dec_deg);
 							MGRS mgrs  = (MGRS)geo;
 							double eastM = mgrs.East;
 							double northM = mgrs.North;
@@ -110,10 +107,10 @@ public class TCPTestClient : MonoBehaviour {
 							string bandM = mgrs.Band;
 							string gridM = mgrs.Grid;
 							string MgrsString = zoneM.ToString() + bandM + " " + gridM + " " + eastM.ToString() + " " + northM.ToString();
-
+							*/
 							//Debug.Log ("Ping 1");
-							gameObject.GetComponent<TextMesh> ().text =  MgrsString;
-							//gameObject.GetComponent<TextMesh> ().text = "Lat: " + Lat.ToString () + "\nLon: " + Lon.ToString ();
+							//.GetComponent<TextMesh> ().text =  MgrsString;
+							gameObject.GetComponent<TextMesh> ().text = "Lat: " + Lat.ToString () + "\nLon: " + Lon.ToString () + "\n" + Alt.ToString ("0.0") + "MSL";
 
 							//Debug.Log ("Ping 2");
 							break;
