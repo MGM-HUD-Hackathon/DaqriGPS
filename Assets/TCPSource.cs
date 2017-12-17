@@ -30,6 +30,9 @@ namespace TCPStatic
 
 		public static double alt {get;set;}
 
+		public static NetworkStream stream1;
+		public static NetworkStream stream2;
+
 	}
 
 }
@@ -46,7 +49,7 @@ public class TCPSource : MonoBehaviour {
 
 	private IEnumerator coroutine;
 
-	private string ip   = "10.10.46.147";
+	private string ip   = "10.10.46.139";
 
 	private int    port = 4352;
 
@@ -117,8 +120,10 @@ public class TCPSource : MonoBehaviour {
 
 		try {           
 
-			socketConnection = new TcpClient (ip, port);            
-			InvokeRepeating("getData", 1.0f, 1.0f);
+
+				InvokeRepeating("getData", 1.0f, 1.0f);
+			//}
+			//getData();
 
 
 
@@ -131,13 +136,21 @@ public class TCPSource : MonoBehaviour {
 	}
 
 	public void getData() {
+		
+		/*socketConnection = new TcpClient (ip, port); 
+		using (TCPStatic.Source.stream2 = socketConnection.GetStream ()) {  
+	//while (true) {
+		Debug.Log("Testing");
+
+
+		Debug.Log ("Testing1");
 		Byte[] bytes = new Byte[1024]; 
 
-	//while (true) {
+		Debug.Log("Testing2");
+		int length = TCPStatic.Source.stream2.Read (bytes, 0, bytes.Length);
 
-		using (NetworkStream stream = socketConnection.GetStream ()) {                  
+		Debug.Log ("Testing3");
 
-		int length = stream.Read (bytes, 0, bytes.Length);
 
 		var incommingData = new byte[length];                       
 
@@ -147,78 +160,75 @@ public class TCPSource : MonoBehaviour {
 
 		string[] srvrMsgs = serverMessage.Split (',');
 
-		if (srvrMsgs [0] == nmea) {
+			if (srvrMsgs [0] == nmea) {
 
-			Debug.Log (serverMessage);
+				Debug.Log (serverMessage);
 
-			double Lat = Convert.ToDouble (srvrMsgs [2]) / 100; //32.226984
+				double Lat = Convert.ToDouble (srvrMsgs [2]) / 100; //32.226984
 
-			double Lon = Convert.ToDouble (srvrMsgs [4]) / 100; //86.186043
+				double Lon = Convert.ToDouble (srvrMsgs [4]) / 100; //86.186043
 
-			double Alt = Convert.ToDouble (srvrMsgs [9]);
+				double Alt = Convert.ToDouble (srvrMsgs [9]);
 
-			//Debug.Log("Lat: " + Lat);
+				//Debug.Log("Lat: " + Lat);
 
-			//Debug.Log("Lon: " + Lon);
+				//Debug.Log("Lon: " + Lon);
 
-			double Lat_deg = Convert.ToDouble (Math.Floor (Lat)); //32
+				double Lat_deg = Convert.ToDouble (Math.Floor (Lat)); //32
 
-			double Lon_deg = Convert.ToDouble (Math.Floor (Lon)); //86
+				double Lon_deg = Convert.ToDouble (Math.Floor (Lon)); //86
 
-			//Debug.Log("Lat_deg: " + Lat_deg);
+				//Debug.Log("Lat_deg: " + Lat_deg);
 
-			//Debug.Log("Lon_deg: " + Lon_deg);
+				//Debug.Log("Lon_deg: " + Lon_deg);
 
-			double Lat_minute = (Lat - Lat_deg) * 100 / 60; //(0.226984*100)/60 = (22.6984)/60 = 0.378306
+				double Lat_minute = (Lat - Lat_deg) * 100 / 60; //(0.226984*100)/60 = (22.6984)/60 = 0.378306
 
-			double Lon_minute = (Lon - Lon_deg) * 100 / 60; //(0.186043*100)/60  = (18.6043)/60 = 0.310071
+				double Lon_minute = (Lon - Lon_deg) * 100 / 60; //(0.186043*100)/60  = (18.6043)/60 = 0.310071
 
-			//Debug.Log("Lat_minute: " + Lat_minute);
+				//Debug.Log("Lat_minute: " + Lat_minute);
 
-			//Debug.Log("Lon_minute: " + Lon_minute);
+				//Debug.Log("Lon_minute: " + Lon_minute);
 
-			Lat_dec_deg = Lat_deg + Lat_minute;
+				Lat_dec_deg = Lat_deg + Lat_minute;
 
-			Lon_dec_deg = Lon_deg + Lon_minute;
+				Lon_dec_deg = Lon_deg + Lon_minute;
 
-			//Debug.Log("Lat_dec_deg: " + Lat_dec_deg);
+				//Debug.Log("Lat_dec_deg: " + Lat_dec_deg);
 
-			//Debug.Log("Lon_dec_deg: " + Lon_dec_deg);
+				//Debug.Log("Lon_dec_deg: " + Lon_dec_deg);
 
-			if (srvrMsgs [3] == "S") {
+				if (srvrMsgs [3] == "S") {
 
-				Lat_dec_deg = Lat_dec_deg * -1;
+					Lat_dec_deg = Lat_dec_deg * -1;
 
+				}
+
+				if (srvrMsgs [5] == "W") {
+
+					Lon_dec_deg = Lon_dec_deg * -1;
+
+				}
+
+
+				//Debug.Log ("Ping 1");
+
+				//.GetComponent<TextMesh> ().text =  MgrsString;
+
+				Debug.Log ("1Lat: " + Lat.ToString () + "\nLon: " + Lon.ToString () + "\n" + Alt.ToString ("0.0") + "MSL");
+
+				//gameObject.GetComponent<TextMesh> ().text = "Lat: " + Lat.ToString () + "\nLon: " + Lon.ToString () + "\n" + Alt.ToString ("0.0") + "MSL";
+
+				Debug.Log ("Testing4");
+
+				TCPStatic.Source.lon = Lon;
+
+				TCPStatic.Source.lat = Lat;
+
+				TCPStatic.Source.alt = Alt;
 			}
-
-			if (srvrMsgs [5] == "W") {
-
-				Lon_dec_deg = Lon_dec_deg * -1;
-
-			}
-
-
-			//Debug.Log ("Ping 1");
-
-			//.GetComponent<TextMesh> ().text =  MgrsString;
-
-			Debug.Log ("1Lat: " + Lat.ToString () + "\nLon: " + Lon.ToString () + "\n" + Alt.ToString ("0.0") + "MSL");
-
-			//gameObject.GetComponent<TextMesh> ().text = "Lat: " + Lat.ToString () + "\nLon: " + Lon.ToString () + "\n" + Alt.ToString ("0.0") + "MSL";
-
-
-
-			TCPStatic.Source.lon = Lon;
-
-			TCPStatic.Source.lat = Lat;
-
-			TCPStatic.Source.alt = Alt;
-			}
-		}
+		}*/
 	}
-
-		
-
 
 }
 

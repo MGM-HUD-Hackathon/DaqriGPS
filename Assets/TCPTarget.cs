@@ -38,14 +38,18 @@ public class TCPTarget : MonoBehaviour {
 		print("Starting " + Time.time);
 
 		ListenForData ();
+
+		//InvokeRepeating("ListenForData", 1.0f, 1.0f);
 	}  	
 	/// <summary> 	
 	/// Listen for Data
 	/// </summary>     
 	public void ListenForData() { 	
 		try { 			
-			socketConnection = new TcpClient (ip, port); 
-			InvokeRepeating("getData", 1.5f, 1.0f);
+			
+			  InvokeRepeating("getData", 1.5f, 1.0f);
+			//}
+			//getData();
 		} catch (SocketException socketException) {             
 			Debug.Log ("Socket exception: " + socketException);         
 		}
@@ -54,8 +58,11 @@ public class TCPTarget : MonoBehaviour {
 	private void getData() {
 		Byte[] bytes = new Byte[1024]; 
 
-		using (NetworkStream stream = socketConnection.GetStream ()) { 					
-			int length = stream.Read (bytes, 0, bytes.Length);
+	socketConnection = new TcpClient (ip, port); 
+	using (TCPStatic.Source.stream1 = socketConnection.GetStream ()) { 
+
+						
+		int length = TCPStatic.Source.stream1.Read (bytes, 0, bytes.Length);
 			var incommingData = new byte[length]; 						
 			Array.Copy (bytes, 0, incommingData, 0, length); 						
 			string serverMessage = Encoding.ASCII.GetString (incommingData); 	
@@ -65,23 +72,23 @@ public class TCPTarget : MonoBehaviour {
 			if (srvrMsgs [0] == nmea) {
 				Debug.Log (serverMessage);
 
-				double Lat = Convert.ToDouble (srvrMsgs [2])/100; //32.226984
-				double Lon = Convert.ToDouble (srvrMsgs [4])/100; //86.186043
+				double Lat = Convert.ToDouble (srvrMsgs [2]) / 100; //32.226984
+				double Lon = Convert.ToDouble (srvrMsgs [4]) / 100; //86.186043
 				double Alt = Convert.ToDouble (srvrMsgs [9]);
 
 				//Debug.Log("Lat: " + Lat);
 				//Debug.Log("Lon: " + Lon);
 
 
-				double Lat_deg = Convert.ToDouble(Math.Floor(Lat)); //32
-				double Lon_deg = Convert.ToDouble(Math.Floor(Lon)); //86
+				double Lat_deg = Convert.ToDouble (Math.Floor (Lat)); //32
+				double Lon_deg = Convert.ToDouble (Math.Floor (Lon)); //86
 
 
 				//Debug.Log("Lat_deg: " + Lat_deg);
 				//Debug.Log("Lon_deg: " + Lon_deg);
 
-				double Lat_minute = (Lat - Lat_deg)*100/60; //(0.226984*100)/60 = (22.6984)/60 = 0.378306
-				double Lon_minute = (Lon - Lon_deg)*100/60; //(0.186043*100)/60  = (18.6043)/60 = 0.310071
+				double Lat_minute = (Lat - Lat_deg) * 100 / 60; //(0.226984*100)/60 = (22.6984)/60 = 0.378306
+				double Lon_minute = (Lon - Lon_deg) * 100 / 60; //(0.186043*100)/60  = (18.6043)/60 = 0.310071
 
 
 				//Debug.Log("Lat_minute: " + Lat_minute);
@@ -127,13 +134,13 @@ public class TCPTarget : MonoBehaviour {
 
 				double b = 0;
 
-				if(sourceLon != 0 && sourceLat != 0) {
-					b = bearing(sourceLon, sourceLat, Lon, Lat);
+				if (sourceLon != 0 && sourceLat != 0) {
+					b = bearing (sourceLon, sourceLat, Lon, Lat);
 				}
 
-				gameObject.GetComponent<TextMesh> ().text = "Bearing: " + b.ToString();
-
+				gameObject.GetComponent<TextMesh> ().text = "Bearing: " + b.ToString ("0");
 			}
+
 		} 	 
 
 	}
