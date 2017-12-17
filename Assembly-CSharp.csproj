@@ -104,11 +104,9 @@
      <Compile Include="Assets\DAQRI\System\Scripts\ThermalCameraPreview.cs" />
      <Compile Include="Assets\DAQRI\System\Scripts\TrackedObject.cs" />
      <Compile Include="Assets\DAQRI\System\Scripts\TrackedObjectEventHandlerImpl.cs" />
-     <Compile Include="Assets\DoOnMainThread.cs" />
      <Compile Include="Assets\EmptyClass.cs" />
-     <Compile Include="Assets\GoogleMap.cs" />
-     <Compile Include="Assets\GoogleMaps.cs" />
-     <Compile Include="Assets\TCPTestClient.cs" />
+     <Compile Include="Assets\TCPSource.cs" />
+     <Compile Include="Assets\TCPTarget.cs" />
      <None Include="Assets\DAQRI\System\Shaders\TrackedObject.shader" />
      <None Include="Assets\DAQRI\Plugins\DSD\VosExtension.xml" />
      <None Include="Assets\DAQRI\System\Resources\Unlit-Normal.shader" />
