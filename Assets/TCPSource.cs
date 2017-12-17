@@ -26,7 +26,7 @@ public class TCPSource : MonoBehaviour {
 	private Thread clientReceiveThread; 	
 	#endregion  	
 	private IEnumerator coroutine;
-	private string ip   = "10.10.46.139";
+	private string ip   = "10.10.46.147";
 	private int    port = 4352;
 	private string nmea = "$GPGGA";
 
