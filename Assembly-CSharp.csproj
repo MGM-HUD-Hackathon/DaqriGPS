@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Coordinates.cs" />
      <Compile Include="Assets\DAQRI\Scripts\AdditionalControls.cs" />
      <Compile Include="Assets\DAQRI\Scripts\CalibrationControls.cs" />
      <Compile Include="Assets\DAQRI\Scripts\ColorCameraControls.cs" />
@@ -104,8 +105,11 @@
      <Compile Include="Assets\DAQRI\System\Scripts\ThermalCameraPreview.cs" />
      <Compile Include="Assets\DAQRI\System\Scripts\TrackedObject.cs" />
      <Compile Include="Assets\DAQRI\System\Scripts\TrackedObjectEventHandlerImpl.cs" />
-     <Compile Include="Assets\TCPSource.cs" />
-     <Compile Include="Assets\TCPTarget.cs" />
+     <Compile Include="Assets\ParseGpsData.cs" />
+     <Compile Include="Assets\TCP\TCPConnection.cs" />
+     <Compile Include="Assets\TCP\TCPMembers\TCPMember.cs" />
+     <Compile Include="Assets\TCP\TCPMembers\TCPSource.cs" />
+     <Compile Include="Assets\TCP\TCPMembers\TCPTarget.cs" />
      <None Include="Assets\DAQRI\System\Shaders\TrackedObject.shader" />
      <None Include="Assets\DAQRI\Plugins\DSD\VosExtension.xml" />
      <None Include="Assets\DAQRI\System\Resources\Unlit-Normal.shader" />
