@@ -1,1 +1,0 @@
-DAQRI.SpringboardSDK.min-vos-version=2.1.102

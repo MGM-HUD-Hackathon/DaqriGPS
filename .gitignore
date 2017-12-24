@@ -1,0 +1,14 @@
+
+*.info
+*.log
+*.mdb
+*.xml
+*.dll
+*.pdb
+*.txt
+*.CopyComplete
+*.cache
+Library/metadata
+Temp/
+*.ide
+*.meta
